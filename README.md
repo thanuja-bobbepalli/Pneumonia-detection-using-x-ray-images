@@ -17,14 +17,14 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 - Evaluation metrics: Accuracy, Per-class Accuracy, Confusion Matrix  
 
 
-##Dataset
+## Dataset
 - Source: [Kaggle Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
 - Training Set: **5,216 images**  
   - **Normal:** 1,341  
   - **Pneumonia:** 3,875  
 - Test Set: **576 images**  
 
-##Methodology
+## Methodology
 1. **Preprocessing**  
    - Resizing to **224×224** pixels  
    - Normalization using ImageNet statistics  
@@ -44,7 +44,7 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
    - Early stopping (patience = 5)  
 
 
-##Results
+## Results
 | Class      | Accuracy | Correct Predictions | Total Samples |
 |------------|----------|---------------------|---------------|
 | Normal     | 41%      | 92                  | 220           |
