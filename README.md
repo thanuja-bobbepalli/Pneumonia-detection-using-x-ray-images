@@ -8,7 +8,6 @@ The model classifies chest X-ray images into two categories:
 
 Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detection** and an overall test accuracy of **76%**.  
 
----
 
 ## Features
 - Transfer Learning with **VGG16** pre-trained on ImageNet  
@@ -17,7 +16,6 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 - **Early stopping** and **model checkpointing** to prevent overfitting  
 - Evaluation metrics: Accuracy, Per-class Accuracy, Confusion Matrix  
 
----
 
 ##Dataset
 - Source: [Kaggle Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
@@ -25,8 +23,6 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
   - **Normal:** 1,341  
   - **Pneumonia:** 3,875  
 - Test Set: **576 images**  
-
----
 
 ##Methodology
 1. **Preprocessing**  
@@ -47,7 +43,6 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
    - Epochs: 10  
    - Early stopping (patience = 5)  
 
----
 
 ##Results
 | Class      | Accuracy | Correct Predictions | Total Samples |
@@ -61,7 +56,6 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 
 Strong performance in pneumonia detection but limited accuracy in normal cases due to dataset imbalance.  
 
----
 
 ## Future Work
 - Handle **class imbalance** (weighted loss, SMOTE, balanced sampling)  
@@ -69,6 +63,4 @@ Strong performance in pneumonia detection but limited accuracy in normal cases d
 - Improve **interpretability** using Grad-CAM or attention mechanisms  
 - Extend to **multi-class pneumonia classification**  
 - Validate across **multiple clinical datasets**  
-
----
 
