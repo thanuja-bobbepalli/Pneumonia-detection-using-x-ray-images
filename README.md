@@ -56,7 +56,8 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 
 Strong performance in pneumonia detection but limited accuracy in normal cases due to dataset imbalance.  
 
-
+## Deployes it in Streamlit 
+Check it out [web_application](https://pneumonia-detection-using-x-ray-images-egzohmgm82cungpdfyyeps.streamlit.app/)
 ## Future Work
 - Handle **class imbalance** (weighted loss, SMOTE, balanced sampling)  
 - Explore **ensemble methods** with other CNN architectures (ResNet, DenseNet)  
