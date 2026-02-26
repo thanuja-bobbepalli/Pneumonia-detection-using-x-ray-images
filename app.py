@@ -7,7 +7,6 @@ from utils import load_model, preprocess_image, predict
 # ----------------------------
 st.set_page_config(
     page_title="Pneumonia Detection AI",
-    page_icon="🫁",
     layout="centered"
 )
 
