@@ -25,6 +25,8 @@ def download_model():
 # -----------------------------------
 def load_model():
 
+    download_model()
+
     checkpoint = torch.load(
         MODEL_FILE,
         map_location="cpu",
@@ -33,10 +35,7 @@ def load_model():
 
     model = models.vgg16(pretrained=False)
 
-    # Restore classifier EXACTLY as saved
     model.classifier = checkpoint['classifier']
-
-    # Load weights
     model.load_state_dict(checkpoint['state_dict'])
 
     model.class_to_idx = checkpoint['class_to_idx']
