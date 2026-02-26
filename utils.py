@@ -25,24 +25,25 @@ def download_model():
 # -----------------------------------
 def load_model():
 
-    model = models.vgg16(pretrained=False)
-
-    n_inputs = model.classifier[6].in_features
-    model.classifier[6] = nn.Linear(n_inputs, 2)
-
     checkpoint = torch.load(
         MODEL_FILE,
         map_location="cpu",
         weights_only=False
     )
 
-    print("Checkpoint type:", type(checkpoint))
+    model = models.vgg16(pretrained=False)
 
-    model.load_state_dict(checkpoint)
+    # Restore classifier EXACTLY as saved
+    model.classifier = checkpoint['classifier']
+
+    # Load weights
+    model.load_state_dict(checkpoint['state_dict'])
+
+    model.class_to_idx = checkpoint['class_to_idx']
+    model.idx_to_class = checkpoint['idx_to_class']
 
     model.eval()
     return model
-
 # -----------------------------------
 # Image Preprocessing
 # -----------------------------------
