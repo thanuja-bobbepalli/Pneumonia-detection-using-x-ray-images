@@ -24,27 +24,23 @@ def download_model():
 # Load Model
 # -----------------------------------
 def load_model():
-    download_model()
 
-    # Check file size
-    if os.path.getsize(MODEL_FILE) < 1000000:
-        raise Exception("Model download failed. File corrupted.")
-
-    checkpoint = torch.load(MODEL_FILE, map_location=torch.device("cpu"))
     model = models.vgg16(pretrained=False)
 
     n_inputs = model.classifier[6].in_features
-    model.classifier[6] = nn.Sequential(
-        nn.Linear(n_inputs, 256),
-        nn.ReLU(),
-        nn.Dropout(0.2),
-        nn.Linear(256, 2),
-        nn.LogSoftmax(dim=1)
+    model.classifier[6] = nn.Linear(n_inputs, 2)
+
+    checkpoint = torch.load(
+        MODEL_FILE,
+        map_location="cpu",
+        weights_only=False
     )
 
-    model.load_state_dict(checkpoint["state_dict"])
-    model.eval()
+    print("Checkpoint type:", type(checkpoint))
 
+    model.load_state_dict(checkpoint)
+
+    model.eval()
     return model
 
 # -----------------------------------
