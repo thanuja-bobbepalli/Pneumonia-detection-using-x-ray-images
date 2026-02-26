@@ -46,7 +46,7 @@ st.markdown("""
 # ----------------------------
 # Header
 # ----------------------------
-st.markdown('<div class="main-title">🫁 Pneumonia Detection from Chest X-Ray</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Pneumonia Detection from Chest X-Ray</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Deep Learning powered Medical AI System</div>', unsafe_allow_html=True)
 
 # ----------------------------
