@@ -1,8 +1,8 @@
+import os
 import torch
 import torch.nn as nn
 from torchvision import models, transforms
-from PIL import Image
-import os
+import gdown
 
 # -----------------------------------
 # Class Names
@@ -10,23 +10,24 @@ import os
 CLASSES = ["Normal", "Pneumonia"]
 
 # -----------------------------------
+# Google Drive Model Download
+# -----------------------------------
+MODEL_URL = "https://drive.google.com/uc?id=16aoMiOSh6WPkWB5sIAfO0g-pWajzc1t0"
+MODEL_FILE = "vgg16-chest-4.pth"
+
+def download_model():
+    if not os.path.exists(MODEL_FILE):
+        print("Downloading model from Google Drive...")
+        gdown.download(MODEL_URL, MODEL_FILE, quiet=False)
+
+# -----------------------------------
 # Load Model
 # -----------------------------------
-import os
-import torch
-import torch.nn as nn
-from torchvision import models
+def load_model():
+    download_model()
 
-def load_model(model_path=None):
+    checkpoint = torch.load(MODEL_FILE, map_location=torch.device("cpu"))
 
-    if model_path is None:
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(current_dir, "vgg16-chest-4.pth")
-
-    # Load checkpoint
-    checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
-
-    #  Initialize model architecture
     model = models.vgg16(pretrained=False)
 
     n_inputs = model.classifier[6].in_features
@@ -37,12 +38,11 @@ def load_model(model_path=None):
         nn.Linear(256, 2),
         nn.LogSoftmax(dim=1)
     )
-    model.load_state_dict(checkpoint["state_dict"])
 
+    model.load_state_dict(checkpoint["state_dict"])
     model.eval()
 
     return model
-
 
 # -----------------------------------
 # Image Preprocessing
@@ -57,7 +57,6 @@ def preprocess_image(image):
     image = transform(image).unsqueeze(0)
 
     return image
-
 
 # -----------------------------------
 # Prediction Function

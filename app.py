@@ -4,7 +4,7 @@ from utils import load_model, preprocess_image, predict
 
 st.set_page_config(page_title="Pneumonia Detection")
 
-st.title("pneumonia Detection from Chest X-Ray")
+st.title("Pneumonia Detection from Chest X-Ray")
 
 @st.cache_resource
 def get_model():
