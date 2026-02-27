@@ -84,7 +84,7 @@ Docker image is available on Docker Hub:
 ---
 
 ## How to Run Using Docker
-
+```
 ### 1️⃣ Install Docker
 
 Make sure Docker is installed:
