@@ -67,7 +67,7 @@ uploaded_file = st.file_uploader("", type=["jpg", "png", "jpeg"])
 if uploaded_file:
     image = Image.open(uploaded_file)
 
-    st.image(image, caption="Uploaded X-Ray", use_column_width=True)
+    st.image(image, caption="Uploaded X-Ray", width="stretch")
 
     image_tensor = preprocess_image(image)
     label, confidence = predict(model, image_tensor)
