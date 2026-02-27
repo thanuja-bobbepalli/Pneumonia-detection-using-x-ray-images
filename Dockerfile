@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.1.2-cpu-runtime
+FROM pytorch/pytorch:latest
 
 WORKDIR /app
 
