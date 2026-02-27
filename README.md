@@ -7,15 +7,31 @@ The model classifies chest X-ray images into two categories:
 - **Pneumonia**  
 
 Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detection** and an overall test accuracy of **76%**.  
+---
 
+## 📁 Project Structure
+```
+.
+├── app.py
+├── utils.py
+├── Dockerfile
+├── pnemonia Dectection using Pytorch.ipynb
+├── requirements.txt
+└── README.md
+```
+---
 
+This project is a Deep Learning-based Pneumonia Detection system built using:
+
+```- PyTorch (VGG16)
+- Streamlit (Web Interface)
+- Docker (Containerization)```
 ## Features
 - Transfer Learning with **VGG16** pre-trained on ImageNet  
 - **Data augmentation** to improve generalization  
 - **Cross-entropy loss** and **Adam optimizer**  
 - **Early stopping** and **model checkpointing** to prevent overfitting  
 - Evaluation metrics: Accuracy, Per-class Accuracy, Confusion Matrix  
-
 
 ## Dataset
 - Source: [Kaggle Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
@@ -58,6 +74,55 @@ Strong performance in pneumonia detection but limited accuracy in normal cases d
 
 ## Deployes it in Streamlit 
 Check it out [web_application](https://pneumonia-detection-using-x-ray-images-egzohmgm82cungpdfyyeps.streamlit.app/)
+
+##Docker Image (Public)
+
+Docker image is available on Docker Hub:
+
+ https://hub.docker.com/r/thanujabobbepalli/pneumonia-app
+
+---
+
+## How to Run Using Docker
+
+### 1️⃣ Install Docker
+
+Make sure Docker is installed:
+
+```bash
+docker --version
+```
+
+---
+
+### 2️⃣ Pull the Image
+
+```bash
+docker pull thanujabobbepalli/pneumonia-app
+```
+
+---
+
+### 3️⃣ Run the Container
+
+```bash
+docker run -p 8501:8501 thanujabobbepalli/pneumonia-app
+```
+
+---
+
+### 4️⃣ Open in Browser
+
+Go to:
+
+```
+http://localhost:8501
+```
+
+You will see the Streamlit application.
+
+---
+
 ## Future Work
 - Handle **class imbalance** (weighted loss, SMOTE, balanced sampling)  
 - Explore **ensemble methods** with other CNN architectures (ResNet, DenseNet)  
