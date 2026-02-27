@@ -7,6 +7,7 @@ The model classifies chest X-ray images into two categories:
 - **Pneumonia**  
 
 Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detection** and an overall test accuracy of **76%**.  
+
 ---
 
 ## 📁 Project Structure
@@ -23,9 +24,9 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 
 This project is a Deep Learning-based Pneumonia Detection system built using:
 
-```- PyTorch (VGG16)
+- PyTorch (VGG16)
 - Streamlit (Web Interface)
-- Docker (Containerization)```
+- Docker (Containerization)
 ## Features
 - Transfer Learning with **VGG16** pre-trained on ImageNet  
 - **Data augmentation** to improve generalization  
@@ -84,7 +85,6 @@ Docker image is available on Docker Hub:
 ---
 
 ## How to Run Using Docker
-```
 ### 1️⃣ Install Docker
 
 Make sure Docker is installed:
