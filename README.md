@@ -70,7 +70,7 @@ This project is a Deep Learning-based Pneumonia Detection system built using:
 Strong performance in pneumonia detection but limited accuracy in normal cases due to dataset imbalance.  
 
 ## Deployes it in Streamlit 
-Check it out [web_application](https://pneumonia-detection-using-x-ray-images-egzohmgm82cungpdfyyeps.streamlit.app/)
+Check it out [web_application](https://pneumonia-detection-using-x-ray-images-tj9amadclyqx6tm6tz8hgx.streamlit.app/){:target="_blank"}
 
 ## 🏗 Deployment Architecture
 
