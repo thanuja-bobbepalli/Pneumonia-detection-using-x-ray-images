@@ -62,7 +62,7 @@ model = get_model()
 # Upload Section
 # ----------------------------
 st.markdown("### 📤 Upload Chest X-Ray Image")
-uploaded_file = st.file_uploader("", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Uploade Chest x-ray Image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file:
     image = Image.open(uploaded_file)

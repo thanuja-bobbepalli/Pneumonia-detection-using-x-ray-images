@@ -2,6 +2,7 @@ import os
 import torch
 import torch.nn as nn
 from torchvision import models, transforms
+from torchvision.models import vgg16
 import gdown
 
 # -----------------------------------
@@ -33,7 +34,7 @@ def load_model():
         weights_only=False
     )
 
-    model = models.vgg16(pretrained=False)
+    model = vgg16(weights=None)
 
     model.classifier = checkpoint['classifier']
     model.load_state_dict(checkpoint['state_dict'])
