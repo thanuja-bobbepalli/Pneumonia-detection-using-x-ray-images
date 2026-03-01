@@ -8,8 +8,6 @@ The model classifies chest X-ray images into two categories:
 
 Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detection** and an overall test accuracy of **76%**.  
 
----
-
 ## 📁 Project Structure
 ```
 .
@@ -20,8 +18,6 @@ Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detect
 ├── requirements.txt
 └── README.md
 ```
----
-
 This project is a Deep Learning-based Pneumonia Detection system built using:
 
 - PyTorch (VGG16)
@@ -84,7 +80,7 @@ Docker image is available on Docker Hub:
 
 ---
 
-## How to Run Using Docker
+## How to Run Using Docker ,Run Using Prebuilt Docker Image 
 ### 1️⃣ Install Docker
 
 Make sure Docker is installed:
@@ -92,25 +88,18 @@ Make sure Docker is installed:
 ```bash
 docker --version
 ```
-
----
-
 ### 2️⃣ Pull the Image
 
 ```bash
 docker pull thanujabobbepalli/pneumonia-app
 ```
-
----
-
 ### 3️⃣ Run the Container
 
 ```bash
 docker run -p 8501:8501 thanujabobbepalli/pneumonia-app
+                ( or )
+docker run --network host pneumonia-app
 ```
-
----
-
 ### 4️⃣ Open in Browser
 
 Go to:
@@ -122,6 +111,40 @@ http://localhost:8501
 You will see the Streamlit application.
 
 ---
+## Run This Project Using Docker (Build from Source)
+## Clone Repository and Build Docker Image Yourself
+
+If you want to run the project directly from this GitHub repository:
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/thanuja-bobbepalli/pneumonia-detection.git
+cd pneumonia-detection
+```
+
+### 2️ Build the Docker Image
+
+Make sure you are inside the project folder (where Dockerfile exists), then run:
+
+```bash
+docker build -t pneumonia-app .
+```
+This command:
+- Reads the Dockerfile
+- Installs dependencies
+- Creates a Docker image named pneumonia-app
+
+### 3️⃣ Run the Docker Container
+```bash
+docker run -p 8501:8501 pneumonia-app
+```
+
+### 4️⃣ Open in Browser
+```bash
+http://localhost:8501
+```
+
 
 ## Future Work
 - Handle **class imbalance** (weighted loss, SMOTE, balanced sampling)  
