@@ -6,7 +6,7 @@ The model classifies chest X-ray images into two categories:
 - **Normal**  
 - **Pneumonia**  
 
-Despite dataset imbalance, the model achieves **97% accuracy in pneumonia detection** and an overall test accuracy of **76%**.  
+Despite dataset imbalance,Achieves **97%** sensitivity for Pneumonia class and **76%** overall test accuracy.
 
 ## 📁 Project Structure
 ```
@@ -72,10 +72,13 @@ Strong performance in pneumonia detection but limited accuracy in normal cases d
 ## Deployes it in Streamlit 
 Check it out [web_application](https://pneumonia-detection-using-x-ray-images-egzohmgm82cungpdfyyeps.streamlit.app/)
 
-##Docker Image (Public)
+## 🏗 Deployment Architecture
+
+User → Streamlit Web App → PyTorch Model → Prediction Output
+
+## Docker Image (Public)
 
 Docker image is available on Docker Hub:
-
  https://hub.docker.com/r/thanujabobbepalli/pneumonia-app
 
 ---
@@ -144,7 +147,7 @@ docker run -p 8501:8501 pneumonia-app
 ```bash
 http://localhost:8501
 ```
-
+Note : The trained model weights are automatically downloaded during container startup.
 
 ## Future Work
 - Handle **class imbalance** (weighted loss, SMOTE, balanced sampling)  
